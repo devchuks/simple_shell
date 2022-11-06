@@ -13,7 +13,7 @@ int str_len(char *str)
 		return (0);
 	for (i = 0; str[i] != '\0'; i++)
 		;
-	return(i);
+	return (i);
 }
 
 /**
@@ -38,6 +38,7 @@ void single_free(int n, ...)
 	int i;
 	char *str;
 	va_list a_list;
+
 	va_start(a_list, n);
 	for (i = 0; i < n; i++)
 	{
@@ -68,7 +69,7 @@ void print_error(char *av, int count, char *command)
  * exec_error - Prints execution errors
  * @av: Name of the program running the shell
  * @count: A counter that Keeps track of number of command entered
- * tmp_command: the command that failed
+ * @tmp_command: the command that is filed
  */
 void exec_error(char *av, int count, char *tmp_command)
 {
