@@ -1,10 +1,15 @@
 # Jael Simple Shell
+
+
 A simple UNIX command interpreter written as part of the low-level programming 
 
-# Description 
+# Description
+
+ 
 Jael is a simple UNIX command language interpreter that reads commands from either a file or standard input and executes them.
 
 # Compilation
+
 
 The shell will be compiled this way:
 
@@ -24,6 +29,7 @@ The Jael shell supports most shell commands, such as cd, pwd, cat, echo, ls, -la
 
 # Built-Ins
 
+
 The following built-ins are supported by the Jael shell:
 
 
@@ -32,6 +38,23 @@ env - Print the current environment
 setenv VARIABLE VALUE - Initialize a new environment VARIABLE with VALUE, or modify an existing VARIABLE with VALUE
 
 unsetenv VARIABLE - Remove an environment VARIABLE
+
+cd - Changes the current working directory to the paramenters passed to cd
+
+exit - Exit the shell
+
+# Helper Functions
+
+
+str_len - Calculates length of a string
+
+double_free - Free double pointer variables
+
+single_free - Free n amount of pointers to a string
+
+print_error - Print a message error when a command is not found
+
+exec_error - Prints execution error
 
 # Return Value
 
