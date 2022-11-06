@@ -49,7 +49,7 @@ void exit_b(char *);
 void env_b(char *);
 void cd_b(char *);
 
-/*Holberton library functions*/
+/*ALX library functions*/
 int _strcmp(char *, char *);
 char *_strdup(char *);
 void print_str(char *, int);
