@@ -60,7 +60,7 @@ exec_error - Prints execution error
 
 Jael shell will exit with status 0 unless status is specified with syntax exit VALUE.
 
-#List of Functions
+# List of Functions
 
 parse_line - Parses the command line looking for commands and argumements.
 
