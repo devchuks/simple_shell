@@ -1,4 +1,4 @@
-#include "joel.h"
+#include "jael.h"
 
 /**
  * str_len - Calculates the length of a string
