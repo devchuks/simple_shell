@@ -42,3 +42,24 @@ char *_strdup(char *src)
 
 	return (dest);
 }
+
+/**
+ * print_str - Print a string character by character
+ * @str: String to be printed. 
+ * Prints (null) if the string is NULL
+ * @new_line: A new line will be printed if integer is 0
+ * Nothing will be printed otherwise
+ */
+void print_str(char *str, int new_line)
+{
+	int i;
+
+	if (str == NULL)
+		str = "(null)";
+
+	for (i = 0; str[i] != '\0'; i++)
+		write(STDOUT_FILENO, &str[i], 1);
+
+	if (new_line == 0)
+		write(STDOUT_FILENO, "\n", 1)
+}
