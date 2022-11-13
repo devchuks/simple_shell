@@ -61,7 +61,7 @@ void print_str(char *str, int new_line)
 		write(STDOUT_FILENO, &str[i], 1);
 
 	if (new_line == 0)
-		write(STDOUT_FILENO, "\n", 1)
+		write(STDOUT_FILENO, "\n", 1);
 }
 
 /**

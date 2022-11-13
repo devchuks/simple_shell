@@ -1,7 +1,7 @@
 # Jael Simple Shell
 
 
-A simple UNIX command interpreter written as part of the low-level programming 
+A UNIX command interpreter written 
 
 # Description
 
@@ -13,18 +13,18 @@ Jael is a simple UNIX command language interpreter that reads commands from eith
 
 The shell will be compiled this way:
 
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o hsh
+gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o jael
 
 Once compiled, to start the program, run:
 
-./hsh
+./jael
 
 To exit the program, run:
 
 Jael $ exit
 
 
-The Jael shell supports most shell commands, such as cd, pwd, cat, echo, ls, -la and more.
+The Jael shell supports most shell commands, such as cd, pwd, cat, echo, ls, -la, etc.
 
 
 # Built-Ins
