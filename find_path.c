@@ -16,7 +16,7 @@ char *path_finder(char *command)
 	char *directory;
 
 	index = find_path(str);
-	path_token = tokenize_path(insex, str);
+	path_tokens = tokenize_path(index, str);
 	if (path_tokens == NULL)
 		return (NULL);
 
@@ -174,6 +174,6 @@ char *build_path(char *directory, char *command)
 		for (j = 0; command[j] != '\0'; j++, i++)
 			built[i] = command[j];
 	}
-	built[--1] = '\0';
+	built[--i] = '\0';
 	return (built);
 }
