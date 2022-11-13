@@ -63,3 +63,13 @@ void print_str(char *str, int new_line)
 	if (new_line == 0)
 		write(STDOUT_FILENO, "\n", 1)
 }
+
+/**
+ * _putchar - writes a character to the stdout
+ * @c: Character that will be written to stdout
+ * Return: Upon success how many characters were written
+ * */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
