@@ -21,7 +21,7 @@ Once compiled, to start the program, run:
 
 To exit the program, run:
 
-Jael $ exit
+$ exit
 
 
 The Jael shell supports most shell commands, such as cd, pwd, cat, echo, ls, -la, etc.
