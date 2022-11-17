@@ -1,9 +1,8 @@
 #include "jael.h"
-
 /**
- * str_len - Calculates the length of a string
- * @str: String that needs length to be found
- * Return: Length of a string if success. 0 otherwise
+ * str_len - Calculates the lenght of a string.
+ * @str: String that needs length to be found.
+ * Return: Upon success returns the length of a string. otherwise 0.
  */
 int str_len(char *str)
 {
@@ -17,8 +16,8 @@ int str_len(char *str)
 }
 
 /**
- * double_free - Free double pointer variables
- * @to_be_freed: The address of the elements that need to be freed
+ * double_free - Free double pointer variables.
+ * @to_be_freed: The address of the elements that need to be freed.
  */
 void double_free(char **to_be_freed)
 {
@@ -30,8 +29,8 @@ void double_free(char **to_be_freed)
 }
 
 /**
- * single_free - Free n amount of pointers to a string
- * @n: the number of pointers to free
+ * single_free - Will free a n amount of pointers to a string.
+ * @n: The number of pointers to free.
  */
 void single_free(int n, ...)
 {
@@ -50,13 +49,14 @@ void single_free(int n, ...)
 	va_end(a_list);
 }
 
+
 /**
- * print_error - Prints an error message when a command is not found.
- * @count: A counter that keeps track of the number of commands run
- * @av: The name of the program running the shell
- * @command: The specific command not being found
+ * error_printing - Prints a message error when a comand is not found.
+ * @count: A counter keeping track of the number of commands run on the shell.
+ * @av: The name of the program running the shell.
+ * @command: The specific command not being found.
  */
-void print_error(char *av, int count, char *command)
+void error_printing(char *av, int count, char *command)
 {
 	print_str(av, 1);
 	print_str(": ", 1);
@@ -66,14 +66,15 @@ void print_error(char *av, int count, char *command)
 }
 
 /**
- * exec_error - Prints execution errors
- * @av: Name of the program running the shell
- * @count: A counter that Keeps track of number of command entered
- * @tmp_command: the command that is filed
+ * exec_error - Prints exec errors.
+ * @av: The name of the program running the shell.
+ * @count: Keeps track of how many commands have been entered.
+ * @tmp_command: The command that filed.
  */
+
 void exec_error(char *av, int count, char *tmp_command)
 {
-	print_error(av, count, tmp_command);
+	error_printing(av, count, tmp_command);
 	print_str(": ", 1);
 	perror("");
 	exit(1);

@@ -2,7 +2,6 @@
 
 /**
  * cd_b - Changes the current working directory to the parameter passed to cd.
- *
  * if no parameter is passed it will change directory to HOME.
  * @line: A string representing the input from the user.
  */
@@ -11,7 +10,7 @@ void cd_b(char *line)
 	int index;
 	int token_count;
 	char **param_array;
-	const char *delim = "\n\t";
+	const char *delim = "\n\t ";
 
 	token_count = 0;
 	param_array = token_interface(line, delim, token_count);
@@ -34,8 +33,8 @@ void cd_b(char *line)
 }
 
 /**
- * env_b - Prints all the environmental variables in the current shell
- * @line: A string representing the input from the user
+ * env_b - Prints all the environmental variables in the current shell.
+ * @line: A string representing the input from the user.
  */
 void env_b(__attribute__((unused))char *line)
 {
@@ -51,8 +50,8 @@ void env_b(__attribute__((unused))char *line)
 }
 
 /**
- * exit_b - Exit the shell. After freeing allocated resources
- * @line: A string representing the input from the user
+ * exit_b - Exits the shell. After freeing allocated resources.
+ * @line: A string representing the input from the user.
  */
 void exit_b(char *line)
 {
@@ -62,9 +61,9 @@ void exit_b(char *line)
 }
 
 /**
- * check_built_ins - Find the right function needed for execution
- * @str: The name of the function that is needed
- * Return: Upon success a pointer to a void function. Otherwise NULL.
+ * check_built_ins - Finds the right function needed for execution.
+ * @str: The name of the function that is needed.
+ * Return: Upon sucess a pointer to a void function. Otherwise NULL.
  */
 void (*check_built_ins(char *str))(char *str)
 {
@@ -88,17 +87,16 @@ void (*check_built_ins(char *str))(char *str)
 }
 
 /**
- * built_in - checks for builtin functions
- * @command: An array of all the arguments passed to the shell
- * @line: A string representing the input from the user
- * Return: If function is found 0. Otherwise -1
+ * built_in - Checks for builtin functions.
+ * @command: An array of all the arguments passed to the shell.
+ * @line: A string representing the input from the user.
+ * Return: If function is found 0. Otherwise -1.
  */
 int built_in(char **command, char *line)
 {
 	void (*build)(char *);
 
 	build = check_built_ins(command[0]);
-
 	if (build == NULL)
 		return (-1);
 	if (_strcmp("exit", command[0]) == 0)

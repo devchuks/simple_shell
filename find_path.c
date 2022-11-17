@@ -1,11 +1,11 @@
 #include "jael.h"
 
 /**
- * path_finder - An interface for functions that finds the
- * full path of a program
- * @command: Represents a command
- * Return: a string with full path of the program if success
- * otherwise return NULL
+ * path_finder - Acts as an interface for functions that will be able to
+ * find the full path of a program.
+ * @command: Represents a command. For example ls, echo, pwd, etc.
+ * Return: Upon sucess a string with the full path of the program.
+ * for example /bin/ls, /bin/echo, etc. Otherwise returns NULL.
  */
 char *path_finder(char *command)
 {
@@ -38,12 +38,11 @@ char *path_finder(char *command)
 
 	return (constructed);
 }
-
 /**
- * find_path - Finds the index of an environmental variable
- * @str: Environmental variable that needs to be found
- * Return: The index of the environmental variable if success
- * otherwise returns -1
+ * find_path - Finds the index of an environmental variable.
+ * @str: Environmental variable that needs to be found.
+ * Return: Upon success returns the index of the environmental variable.
+ * otherwise returns -1.
  */
 int find_path(char *str)
 {
@@ -70,10 +69,9 @@ int find_path(char *str)
  * of strings contining the path directories.
  * @index: Index of the path in the environment variables.
  * @str: string to separate and tokenize.
- * Return: NULL terminated array of pointer to strings on success
- * Otherwise returns NULL.
- * Note!: Do not forget to free allocated memory on
- * receiving function or when possible.
+ * Return: Upon success a NULL terminated array of pointer to strings.
+ * Otherwise returns NULL. Note!: Do not forget to free alocated
+ * memory on receiving function or when possible.
  */
 char **tokenize_path(int index, char *str)
 {
@@ -85,6 +83,7 @@ char **tokenize_path(int index, char *str)
 
 	len = str_len(str);
 	token_count = 0;
+	/*Moving the pointer len of str plus = sign*/
 	env_var = environ[index] + (len + 1);
 	path_tokens = token_interface(env_var, delim, token_count);
 	if (path_tokens == NULL)
@@ -95,7 +94,7 @@ char **tokenize_path(int index, char *str)
 
 /**
  * search_directories - Looks through directories stored in path_tokens for a
- * specific file.
+ * specific file. aka commmand.
  * @path_tokens: A pointer to an array of strings representing the different
  * paths contained in the PATH environmental varible.
  * @command: Represents a command. For example ls, echo, pwd, /bin/ls etc.
@@ -143,7 +142,7 @@ char *search_directories(char **path_tokens, char *command)
  * one representing the command file.
  * @directory: Represents a directory in the path.
  * @command: Represents a file in a directory of the path.
- * Return: a string representing the full path of a command a Success.
+ * Return: Upon success a string representing the full path of a command.
  * Otherwise NULL.
  */
 char *build_path(char *directory, char *command)
@@ -170,7 +169,6 @@ char *build_path(char *directory, char *command)
 			built[i] = directory[j];
 		built[i] = '/';
 		i++;
-
 		for (j = 0; command[j] != '\0'; j++, i++)
 			built[i] = command[j];
 	}
