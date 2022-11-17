@@ -13,12 +13,12 @@ Jael is a simple UNIX command language interpreter that reads commands from eith
 
 The shell will be compiled this way:
 
-gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o jael
+```gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c -o jael```
 
 Once compiled, to start the program, run:
 
-./jael
+```./jael```
 
 To exit the program, run:
 
-$ exit
+```$ exit```
